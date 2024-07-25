@@ -20,6 +20,7 @@ class UserController extends Controller
     {
         $request->validate([
             'tim' => 'required|integer',
+            'nama_tim' => 'required|string',
             'username' => 'required|string',
             'password' => 'required|string',
             'topik' => 'required|string',
@@ -39,6 +40,7 @@ class UserController extends Controller
         } else {
             $user = User::create([
                 'tim' => $request->tim,
+                'nama_tim' => $request->nama_tim,
                 'username' => $request->username,
                 'password_asli' => $request->password,
                 'password' => Hash::make($request->password),
@@ -60,7 +62,7 @@ class UserController extends Controller
                 }
             }
 
-            return redirect()->back()->with('success', 'Data berhasil disimpan.');
+            return redirect('/fraa');
         }
     }
 }

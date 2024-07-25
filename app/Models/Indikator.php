@@ -16,4 +16,9 @@ class Indikator extends Model
     {
         return $this->belongsTo(User::class);
     }
+
+    public function user_indikator()
+    {
+        return $this->hasMany(User_indikator::class, 'tim', 'tim');
+    }
 }

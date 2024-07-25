@@ -206,7 +206,6 @@
         }
 
         select,
-        textarea,
         input[type="text"],
         input[type="number"],
         input[type="file"],
@@ -225,6 +224,24 @@
             font-family: 'Helvetica Neue', Arial, sans-serif;
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
             height: 40px;
+            margin-bottom: 2rem;
+        }
+
+        textarea {
+            display: block;
+            width: 100%;
+            padding: 0.375rem 0.75rem;
+            font-size: 1rem;
+            line-height: 1.5;
+            color: #FF8C00;
+            background-color: #fff;
+            background-clip: padding-box;
+            border: 1px solid #FF8C00;
+            border-radius: 0.25rem;
+            transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            height: 100px;
             margin-bottom: 2rem;
         }
 
@@ -250,8 +267,9 @@
             color: #FF8C00;
             opacity: 1;
         }
+
         .boo {
-            border: 1px solid #FF8C00; 
+            border: 1px solid #FF8C00;
             padding: 10px;
             margin-bottom: 2rem;
         }
@@ -277,6 +295,10 @@
             <div class="input-group">
                 <label for="tim">Tim</label>
                 <input type="number" name="tim" id="tim" placeholder="Tim" required>
+            </div>
+            <div class="input-group">
+                <label for="nama_tim">Nama Tim</label>
+                <input type="text" name="nama_tim" id="nama_tim" placeholder="Nama Tim" required>
             </div>
             <div class="input-group">
                 <label for="username">Username</label>

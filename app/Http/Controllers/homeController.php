@@ -12,7 +12,7 @@ class homeController extends Controller
     }
 
     public function upload(){
-        $indikator = Indikator::where('user_id', auth()->user()->id)->get();;
+        $indikator = Indikator::where('user_id', auth()->user()->id)->get();
 
         return view('form_user', ['indikator' => $indikator]);
     }

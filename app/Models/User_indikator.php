@@ -10,7 +10,7 @@ class User_indikator extends Model
     use HasFactory;
     protected $table = 'user_indikator';
 
-    protected $fillable = ['user_id', 'kendala', 'solusi', 'rencana_tindak_lanjut'];
+    protected $fillable = ['user_id', 'tim', 'kendala', 'solusi', 'rencana_tindak_lanjut'];
 
     public function user()
     {

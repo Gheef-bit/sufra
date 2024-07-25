@@ -11,6 +11,8 @@ class User extends Authenticatable
 {
     use HasFactory, Notifiable;
     protected $table = 'users';
+    public $users = 'users';
+
 
 
     /**
@@ -20,6 +22,7 @@ class User extends Authenticatable
      */
     protected $fillable = [
         'tim',
+        'nama_tim',
         'username',
         'password_asli',
         'password',
@@ -53,5 +56,9 @@ class User extends Authenticatable
     public function indikator()
     {
         return $this->hasMany(Indikator::class);
+    }
+    public function fra()
+    {
+        return $this->belongsTo(fra::class);
     }
 }

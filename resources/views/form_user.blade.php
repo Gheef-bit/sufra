@@ -17,6 +17,12 @@
             box-sizing: border-box;
         }
 
+        .boo {
+            border: 1px solid #FF8C00;
+            padding: 10px;
+            margin-bottom: 2rem;
+        }
+
         body {
             font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
             margin: 0;
@@ -178,8 +184,26 @@
             box-shadow: 0 0 0 2px #fff, 0 0 0 3px var(--primaryy-color);
         }
 
+        .btnn {
+            padding: 1rem 2rem;
+            display: block;
+            /* text-decoration: none; */
+            background-color: var(--primary-color);
+            color: #f3f3f3;
+            font-weight: bold;
+            text-align: center;
+            border-radius: 5px;
+            border: 0;
+            cursor: pointer;
+            transition: 0.3%;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .btnn:hover {
+            box-shadow: 0 0 0 2px #fff, 0 0 0 3px var(--primary-color);
+        }
+
         select,
-        textarea,
         input[type="text"],
         input[type="file"],
         input[type="date"] {
@@ -199,6 +223,24 @@
             height: 40px;
         }
 
+        textarea {
+            display: block;
+            width: 100%;
+            padding: 0.375rem 0.75rem;
+            font-size: 1rem;
+            line-height: 1.5;
+            color: #FF8C00;
+            background-color: #fff;
+            background-clip: padding-box;
+            border: 1px solid #FF8C00;
+            border-radius: 0.25rem;
+            transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            height: 100px;
+            margin-bottom: 2rem;
+        }
+
         select:focus,
         textarea:focus,
         input[type="text"]:focus,
@@ -209,7 +251,8 @@
             box-shadow: 0 0 0 0.2rem #FF8C00;
         }
 
-        label, p {
+        label,
+        p {
             color: #FF8C00;
         }
 
@@ -248,7 +291,7 @@
             </div>
             @foreach ($indikator as $indikator)
             <div class="input-group">
-                <label for="summary">{{ $indikator->judul }}</label>
+                <label for="summary"><strong>{{ $indikator->judul }}</strong></label>
                 <p>{{$indikator->keterangan}}</p>
                 <p>{{$indikator->sasaran}}</p>
                 <textarea id="kendala" name="kendala[]" placeholder="Kendala" required></textarea>
@@ -260,19 +303,37 @@
                 <label for="summary">Kesimpulan</label>
                 <textarea id="summary" name="kesimpulan" placeholder="Kesimpulan"></textarea>
             </div>
-            <!-- <div class="input-group">
-                <label for="discussion">Diskusi/Tanya Jawab</label>
-
+            <!-- <div id="indikator-container">
+                <h2 style="margin: 0;">Indikator Kinerja Utama</h2>
                 <div class="input-group">
-                    <input type="text" id="nama_penanya" placeholder="Nama" required>
+                    <label for="judul">Judul</label>
+                    <input type="text" name="judul[]" id="judul" required>
                 </div>
                 <div class="input-group">
-                    <input type="text" id="pertanyaan" placeholder="Pertanyaan" required>
+                    <label for="keterangan">Keterangan</label>
+                    <textarea name="keterangan[]" id="keterangan"></textarea>
                 </div>
                 <div class="input-group">
-                    <input type="text" id="jawaban" placeholder="Jawaban" required>
+                    <label for="sasaran">Sasaran</label>
+                    <textarea name="sasaran[]" id="sasaran"></textarea>
                 </div>
             </div> -->
+            <div id="indikator-container">
+                <div class="input-group">
+                    <label for="discussion">Diskusi/Tanya Jawab</label>
+
+                    <div class="input-group">
+                        <input type="text" id="nama_penanya" name="nama_penanya[]" placeholder="Nama">
+                    </div>
+                    <div class="input-group">
+                        <input type="text" id="pertanyaan" name="pertanyaan[]" placeholder="Pertanyaan">
+                    </div>
+                    <div class="input-group">
+                        <input type="text" id="jawaban" name="jawaban[]" placeholder="Jawaban">
+                    </div>
+                </div>
+            </div>
+            <button type="button" class="btnn ml-auto" id="add-input">Tambah Tanya Jawab</button>
             <div class="input-group">
                 <label for="created-date">Tanggal Pengisian</label>
                 <input type="date" id="insert-date" name="tanggal_pengisian" placeholder="Tanggal Pengisian" required>
@@ -281,13 +342,56 @@
                 <label for="note-taker">Notulis</label>
                 <input type="text" id="note-taker" name="notulis" placeholder="Notulis" required>
             </div>
+            <div class="input-group">
+                <label for="pj">Penjabat yang berwenang</label>
+                <input type="text" id="pj" name="pjwenang" placeholder="Penjabat yang berwenang" required>
+            </div>
             <!-- <div class="input-group">
-                <label for="signature">Foto Tanda Tangan Notulis</label>
-                <input type="file" id="signature" name="foto_ttd_notulis" required>
+                <label for="realisasi">Realisasi</label>
+                <input type="number" id="realisasi" name="publikasi" placeholder="Publikasi">
+                <input type="number" id="realisasi" name="rilis" placeholder="Rilis">
             </div> -->
-            <button type="submit" class="btn ml-auto">SUBMIT</button>
+            <div class="input-group">
+                <label for="dokumen_sumber">Dokumen Sumber</label>
+                <input type="file" id="dokumen_sumber" name="files[]" required multiple>
+            </div>
+            
+            
+            <button type="submit" class="btnn ml-auto">SUBMIT</button>
         </form>
     </div>
+
+    <script>
+    let counter = 1;
+
+    document.getElementById('add-input').addEventListener('click', function() {
+        counter++;
+        const container = document.getElementById('indikator-container');
+        
+        const newInputWrapper = document.createElement('div');
+        newInputWrapper.className = 'boo';
+        
+        newInputWrapper.innerHTML = `
+            <div class="input-group">
+                <input type="text" name="nama_penanya[]" placeholder="Nama ${counter}">
+            </div>
+            <div class="input-group">
+                <input type="text" name="pertanyaan[]" placeholder="Pertanyaan ${counter}">
+            </div>
+            <div class="input-group">
+                <input type="text" name="jawaban[]" placeholder="Jawaban ${counter}">
+            </div>
+            <button class="btn ml-auto" onclick="removeInput(this)">Hapus</button>
+        `;
+        
+        container.appendChild(newInputWrapper);
+    });
+
+    function removeInput(button) {
+        const inputWrapper = button.parentNode;
+        inputWrapper.remove();
+    }
+</script>
 </body>
 
 </html>
