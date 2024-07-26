@@ -23,7 +23,7 @@
         background: -webkit-linear-gradient(to right, #0000ff, #0000cc, #000099, #000066);
 
         /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-        background: linear-gradient(to right, #0072FF, #4CAF50, #FF8C00);
+        background: rgb(0, 0, 128);
     }
 
     @media (min-width: 768px) {

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Exports\UsersExport;
 use PhpOffice\PhpWord\PhpWord;
 use App\Models\User;
 use App\Models\fra;
@@ -9,6 +10,7 @@ use App\Models\Indikator;
 use App\Models\User_indikator;
 use PhpOffice\PhpWord\IOFactory;
 use Illuminate\Http\Request;
+use Maatwebsite\Excel\Facades\Excel;
 use PhpOffice\PhpWord\SimpleType\Jc;
 
 class DashboardController extends Controller
@@ -38,6 +40,11 @@ class DashboardController extends Controller
     {
         $data = Indikator::with('user_indikator')->get()->groupBy('tim');
         return view('tabel', compact('data'));
+    }
+
+    public function dwnld_tabel()
+    {
+        return Excel::download(new UsersExport, "fra.xlsx");
     }
 }
 // $fileName = 'Notulen_Rapat_Tim.docx';

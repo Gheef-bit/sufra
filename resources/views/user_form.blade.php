@@ -5,9 +5,9 @@
     <title>Tambah User</title>
     <style>
         :root {
-            --primary-color: #0072FF;
-            --primaryy-color: #FF8C00;
-            --primaryyy-color: #4CAF50;
+            --primary-color: blue;
+            --primaryy-color: black;
+            --primaryyy-color: green;
 
         }
 
@@ -23,7 +23,7 @@
             display: grid;
             place-items: center;
             min-height: 100vh;
-            background: linear-gradient(135deg, #0072FF, #4CAF50, #FF8C00);
+            background: rgb(0, 0, 128);
         }
 
         .container {
@@ -66,7 +66,7 @@
 
         .text-center {
             text-align: center;
-            color: #FF8C00;
+            color: black;
         }
 
         .progressbar {
@@ -130,7 +130,7 @@
 
         .progress-step-active {
             background-color: var(--primary-color);
-            color: #FF8C00;
+            color: black;
         }
 
         .form {
@@ -160,7 +160,7 @@
             padding: 1rem 2rem;
             display: block;
             /* text-decoration: none; */
-            background-color: var(--primaryy-color);
+            background-color: red;
             color: #f3f3f3;
             font-weight: bold;
             text-align: center;
@@ -168,7 +168,7 @@
             border: 0;
             cursor: pointer;
             transition: 0.3%;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+            /* box-shadow: 0 0 20px rgba(0, 0, 0, 0.3); */
         }
 
         .btnn {
@@ -183,7 +183,7 @@
             border: 0;
             cursor: pointer;
             transition: 0.3%;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+            /* box-shadow: 0 0 20px rgba(0, 0, 0, 0.3); */
         }
 
         .btnnn {
@@ -198,11 +198,19 @@
             border: 0;
             cursor: pointer;
             transition: 0.3%;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+            /* box-shadow: 0 0 20px rgba(0, 0, 0, 0.3); */
         }
 
         .btn:hover {
-            box-shadow: 0 0 0 2px #fff, 0 0 0 3px var(--primaryy-color);
+            box-shadow: 0 0 0 2px #fff, 0 0 0 3px red;
+        }
+
+        .btnn:hover {
+            box-shadow: 0 0 0 2px #fff, 0 0 0 3px var(--primary-color);
+        }
+
+        .btnnn:hover {
+            box-shadow: 0 0 0 2px #fff, 0 0 0 3px var(--primaryyy-color);
         }
 
         select,
@@ -215,14 +223,14 @@
             padding: 0.375rem 0.75rem;
             font-size: 1rem;
             line-height: 1.5;
-            color: #FF8C00;
+            color: black;
             background-color: #fff;
             background-clip: padding-box;
-            border: 1px solid #FF8C00;
+            border: 1px solid black;
             border-radius: 0.25rem;
             transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
             font-family: 'Helvetica Neue', Arial, sans-serif;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            /* box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); */
             height: 40px;
             margin-bottom: 2rem;
         }
@@ -233,14 +241,14 @@
             padding: 0.375rem 0.75rem;
             font-size: 1rem;
             line-height: 1.5;
-            color: #FF8C00;
+            color: black;
             background-color: #fff;
             background-clip: padding-box;
-            border: 1px solid #FF8C00;
+            border: 1px solid black;
             border-radius: 0.25rem;
             transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
             font-family: 'Helvetica Neue', Arial, sans-serif;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            /* box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); */
             height: 100px;
             margin-bottom: 2rem;
         }
@@ -251,25 +259,25 @@
         input[type="number"]:focus,
         input[type="file"]:focus,
         input[type="date"]:focus {
-            border-color: #FF8C00;
+            border-color: black;
             outline: 0;
-            box-shadow: 0 0 0 0.2rem #FF8C00;
+            box-shadow: 0 0 0 0.2rem black;
         }
 
         label,
         h2,
         p {
-            color: #FF8C00;
+            color: black;
         }
 
         input::placeholder,
         textarea::placeholder {
-            color: #FF8C00;
+            color: black;
             opacity: 1;
         }
 
         .boo {
-            border: 1px solid #FF8C00;
+            border: 1px solid black;
             padding: 10px;
             margin-bottom: 2rem;
         }

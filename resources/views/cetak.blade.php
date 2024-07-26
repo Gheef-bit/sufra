@@ -9,7 +9,7 @@
 </head>
 
 <body>
-    <table class="table table-bordered">
+    <table class="table" style="margin-top: 200px; margin-left: 200px;">
         <thead>
             <tr>
                 <th>Tim</th>

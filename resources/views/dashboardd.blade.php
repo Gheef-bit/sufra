@@ -408,33 +408,38 @@
           <div class="row">
             <div class="col-15 grid-margin">
               <div class="card">
+                <ul style="list-style-type: none; margin-left: auto; margin-right: 40px; margin-bottom: 0px;">
+                  <li style="display: inline;"><a href="/" class="btn  btn-icon-text ml-auto" style="background: green; color:white"><i class="mdi mdi-download btn-icon-prepend"></i>Download FRA Tim</a></li>
+                  <li style="display: inline;"><a href="/" class="btn btn-icon-text ml-auto" style="background: blue; color:white"><i class="mdi mdi-plus btn-icon-prepend"></i>Tambah Tim</a></li>
+                </ul>
                 <!-- <button class="btn btn-gradient-primary btn-icon-text ml-auto"> <i class="mdi mdi-plus btn-icon-prepend"></i> Tambah Tim</button> -->
-                <a href="/" class="btn btn-gradient-primary btn-icon-text ml-auto"><i class="mdi mdi-plus btn-icon-prepend"></i>Tambah Tim</a>
+                
+                
                 <div class="card-body">
-                  <h4 class="card-title">Daftar Tim</h4>
+                  <h4 class="card-title" style="color: black;">Daftar Tim</h4>
                   <div class="table-responsive">
 
                     <table class="table table-striped">
                       <thead>
                         <tr>
-                          <th style="text-align: center;"> Tim </th>
-                          <th> Nama Tim </th>
-                          <th style="text-align: center;"> Status </th>
-                          <th style="text-align: center;"> Detail </th>
+                          <th style="text-align: center; color: black;"> Tim </th>
+                          <th style="color: black;"> Nama Tim </th>
+                          <th style="text-align: center; color: black;"> Status </th>
+                          <th style="text-align: center; color: black;"> Detail </th>
                         </tr>
                       </thead>
                       <tbody>
                         @foreach($teams as $team)
                         <tr style="background-color: red;">
-                          <td style="text-align: center;">Tim {{ $team->tim }}</td>
-                          <td> {{ $team->nama_tim }} </td>
-                          <td style="text-align: center;">
+                          <td style="text-align: center; color: black;">Tim {{ $team->tim }}</td>
+                          <td style="color: black;"> {{ $team->nama_tim }} </td>
+                          <td style="text-align: center; color: black;">
                             <label class="badge badge-gradient-{{ $team->fra_status == 'Sudah isi Notulensi' ? 'success' : 'danger' }}">
                               {{ $team->fra_status }}
                             </label>
                           </td>
-                          <td style="text-align: center;">
-                            <a href="/document/{{$team->tim}}" class="badge badge-gradient-info" style="text-decoration: none;">Detail</a>
+                          <td style="text-align: center; color: black;">
+                            <a href="/document/{{$team->tim}}" class="badge" style="background:blue; text-decoration: none; color:white;">Detail</a>
                           </td>
                         </tr>
                         @endforeach
